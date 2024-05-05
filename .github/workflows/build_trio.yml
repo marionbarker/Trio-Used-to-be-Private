@@ -239,7 +239,7 @@ jobs:
       
       # Build signed Trio IPA file
       - name: Fastlane Build & Archive
-        run: bundle exec fastlane build_open_iaps
+        run: bundle exec fastlane build_trio
         env:
           TEAMID: ${{ secrets.TEAMID }}
           GH_PAT: ${{ secrets.GH_PAT }}
