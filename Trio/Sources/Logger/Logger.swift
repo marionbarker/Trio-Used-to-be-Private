@@ -4,8 +4,8 @@ import UIKit
 
 var LoggerTestMode = false
 
-private let baseReporter = FreeAPSApp.resolver.resolve(GroupedIssueReporter.self)!
-private let router = FreeAPSApp.resolver.resolve(Router.self)!
+private let baseReporter = TrioApp.resolver.resolve(GroupedIssueReporter.self)!
+private let router = TrioApp.resolver.resolve(Router.self)!
 
 let loggerLock = NSRecursiveLock()
 

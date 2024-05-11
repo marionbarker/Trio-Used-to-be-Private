@@ -116,7 +116,7 @@ final class BaseAPSManager: APSManager, Injectable {
         deviceDataManager.pumpExpiresAtDate
     }
 
-    var settings: FreeAPSSettings {
+    var settings: TrioSettings {
         get { settingsManager.settings }
         set { settingsManager.settings = newValue }
     }

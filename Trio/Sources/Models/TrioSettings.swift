@@ -1,6 +1,6 @@
 import Foundation
 
-struct FreeAPSSettings: JSON, Equatable {
+struct TrioSettings: JSON, Equatable {
     var units: GlucoseUnits = .mmolL
     var closedLoop: Bool = false
     var allowAnnouncements: Bool = false
@@ -47,11 +47,11 @@ struct FreeAPSSettings: JSON, Equatable {
     var lockScreenView: LockScreenView = .simple
 }
 
-extension FreeAPSSettings: Decodable {
+extension TrioSettings: Decodable {
     // Needed to decode incomplete JSON
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        var settings = FreeAPSSettings()
+        var settings = TrioSettings()
 
         if let units = try? container.decode(GlucoseUnits.self, forKey: .units) {
             settings.units = units

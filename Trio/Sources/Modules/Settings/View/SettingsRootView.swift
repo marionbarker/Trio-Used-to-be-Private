@@ -92,9 +92,9 @@ extension Settings {
                             Text("Enacted")
                                 .navigationLink(to: .configEditor(file: OpenAPS.Enact.enacted), from: self)
                             Text("Announcements")
-                                .navigationLink(to: .configEditor(file: OpenAPS.FreeAPS.announcements), from: self)
+                                .navigationLink(to: .configEditor(file: OpenAPS.Trio.announcements), from: self)
                             Text("Enacted announcements")
-                                .navigationLink(to: .configEditor(file: OpenAPS.FreeAPS.announcementsEnacted), from: self)
+                                .navigationLink(to: .configEditor(file: OpenAPS.Trio.announcementsEnacted), from: self)
                             Text("Autotune")
                                 .navigationLink(to: .configEditor(file: OpenAPS.Settings.autotune), from: self)
                             Text("Glucose")
@@ -103,15 +103,15 @@ extension Settings {
 
                         Group {
                             Text("Target presets")
-                                .navigationLink(to: .configEditor(file: OpenAPS.FreeAPS.tempTargetsPresets), from: self)
+                                .navigationLink(to: .configEditor(file: OpenAPS.Trio.tempTargetsPresets), from: self)
                             Text("Calibrations")
-                                .navigationLink(to: .configEditor(file: OpenAPS.FreeAPS.calibrations), from: self)
+                                .navigationLink(to: .configEditor(file: OpenAPS.Trio.calibrations), from: self)
                             Text("Middleware")
                                 .navigationLink(to: .configEditor(file: OpenAPS.Middleware.determineBasal), from: self)
                             Text("Statistics")
                                 .navigationLink(to: .configEditor(file: OpenAPS.Monitor.statistics), from: self)
                             Text("Edit settings json")
-                                .navigationLink(to: .configEditor(file: OpenAPS.FreeAPS.settings), from: self)
+                                .navigationLink(to: .configEditor(file: OpenAPS.Trio.settings), from: self)
                         }
                     }
                 } header: { Text("Developer") }

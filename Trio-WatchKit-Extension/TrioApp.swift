@@ -1,6 +1,6 @@
 import SwiftUI
 
-@main struct FreeAPSApp: App {
+@main struct TrioApp: App {
     @StateObject var state = WatchStateModel()
 
     @SceneBuilder var body: some Scene {
@@ -10,6 +10,6 @@ import SwiftUI
             }.environmentObject(state)
         }
 
-//        WKNotificationScene(controller: NotificationController.self, category: "FreeAPSCategory")
+//        WKNotificationScene(controller: NotificationController.self, category: "TrioCategory")
     }
 }

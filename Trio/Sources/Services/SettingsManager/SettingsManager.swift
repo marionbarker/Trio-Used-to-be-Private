@@ -3,21 +3,21 @@ import LoopKit
 import Swinject
 
 protocol SettingsManager: AnyObject {
-    var settings: FreeAPSSettings { get set }
+    var settings: TrioSettings { get set }
     var preferences: Preferences { get }
     var pumpSettings: PumpSettings { get }
     func updateInsulinCurve(_ insulinType: InsulinType?)
 }
 
 protocol SettingsObserver {
-    func settingsDidChange(_: FreeAPSSettings)
+    func settingsDidChange(_: TrioSettings)
 }
 
 final class BaseSettingsManager: SettingsManager, Injectable {
     @Injected() var broadcaster: Broadcaster!
     @Injected() var storage: FileStorage!
 
-    @SyncAccess var settings: FreeAPSSettings {
+    @SyncAccess var settings: TrioSettings {
         didSet {
             if oldValue != settings {
                 save()
@@ -32,15 +32,15 @@ final class BaseSettingsManager: SettingsManager, Injectable {
 
     init(resolver: Resolver) {
         let storage = resolver.resolve(FileStorage.self)!
-        settings = storage.retrieve(OpenAPS.FreeAPS.settings, as: FreeAPSSettings.self)
-            ?? FreeAPSSettings(from: OpenAPS.defaults(for: OpenAPS.FreeAPS.settings))
-            ?? FreeAPSSettings()
+        settings = storage.retrieve(OpenAPS.Trio.settings, as: TrioSettings.self)
+            ?? TrioSettings(from: OpenAPS.defaults(for: OpenAPS.Trio.settings))
+            ?? TrioSettings()
 
         injectServices(resolver)
     }
 
     private func save() {
-        storage.save(settings, as: OpenAPS.FreeAPS.settings)
+        storage.save(settings, as: OpenAPS.Trio.settings)
     }
 
     var preferences: Preferences {

@@ -388,7 +388,7 @@ extension Home.StateModel:
         setStatusTitle()
     }
 
-    func settingsDidChange(_ settings: FreeAPSSettings) {
+    func settingsDidChange(_ settings: TrioSettings) {
         allowManualTemp = !settings.closedLoop
         closedLoop = settingsManager.settings.closedLoop
         units = settingsManager.settings.units

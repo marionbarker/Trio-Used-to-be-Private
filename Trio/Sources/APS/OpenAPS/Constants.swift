@@ -71,7 +71,7 @@ extension OpenAPS {
     }
 
     enum Function {
-        static let freeaps = "freeaps"
+        static let Trio = "Trio"
         static let generate = "generate"
         static let tempBasalFunctions = "tempBasalFunctions"
         static let exportDefaults = "exportDefaults"
@@ -89,11 +89,11 @@ extension OpenAPS {
         static let uploadedSettings = "upload/uploaded-settings.json"
     }
 
-    enum FreeAPS {
-        static let settings = "freeaps/freeaps_settings.json"
-        static let announcements = "freeaps/announcements.json"
-        static let announcementsEnacted = "freeaps/announcements_enacted.json"
-        static let tempTargetsPresets = "freeaps/temptargets_presets.json"
-        static let calibrations = "freeaps/calibrations.json"
+    enum Trio {
+        static let settings = "Trio/Trio_settings.json"
+        static let announcements = "Trio/announcements.json"
+        static let announcementsEnacted = "Trio/announcements_enacted.json"
+        static let tempTargetsPresets = "Trio/temptargets_presets.json"
+        static let calibrations = "Trio/calibrations.json"
     }
 }

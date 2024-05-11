@@ -26,7 +26,7 @@ extension LiveActivityAttributes.ContentState {
         prev: BloodGlucose?,
         mmol: Bool,
         chart: [Readings],
-        settings: FreeAPSSettings,
+        settings: TrioSettings,
         suggestion: Suggestion
     ) {
         guard let glucose = bg.glucose else {
@@ -127,7 +127,7 @@ extension LiveActivityAttributes.ContentState {
     private let activityAuthorizationInfo = ActivityAuthorizationInfo()
     @Published private(set) var systemEnabled: Bool
 
-    private var settings: FreeAPSSettings {
+    private var settings: TrioSettings {
         settingsManager.settings
     }
 

@@ -1,11 +1,11 @@
-@testable import FreeAPS
 import Swinject
+@testable import Trio
 import XCTest
 
 class CalibrationsTests: XCTestCase, Injectable {
     let fileStorage = BaseFileStorage()
     @Injected() var calibrationService: CalibrationService!
-    let resolver = FreeAPSApp().resolver
+    let resolver = TrioApp().resolver
 
     override func setUp() {
         injectServices(resolver)

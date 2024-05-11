@@ -1,11 +1,11 @@
-@testable import FreeAPS
 import Swinject
+@testable import Trio
 import XCTest
 
 class PluginManagerTests: XCTestCase, Injectable {
     let fileStorage = BaseFileStorage()
     @Injected() var pluginManager: PluginManager!
-    let resolver = FreeAPSApp().resolver
+    let resolver = TrioApp().resolver
 
     override func setUp() {
         injectServices(resolver)

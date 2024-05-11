@@ -4,7 +4,7 @@ import Foundation
 import SwiftUI
 import Swinject
 
-@main struct FreeAPSApp: App {
+@main struct TrioApp: App {
     @Environment(\.scenePhase) var scenePhase
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -24,14 +24,14 @@ import Swinject
     ], parent: nil, defaultObjectScope: .container)
 
     var resolver: Resolver {
-        FreeAPSApp.assembler.resolver
+        TrioApp.assembler.resolver
     }
 
     // Temp static var
     // Use to backward compatibility with old Dependencies logic on Logger
     // TODO: Remove var after update "Use Dependencies" logic in Logger
     static var resolver: Resolver {
-        FreeAPSApp.assembler.resolver
+        TrioApp.assembler.resolver
     }
 
     private func loadServices() {

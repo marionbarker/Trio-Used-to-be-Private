@@ -11,7 +11,7 @@ protocol StateModel: ObservableObject {
     func view(for screen: Screen) -> AnyView
 }
 
-class BaseStateModel<Provider>: StateModel, Injectable where Provider: FreeAPS.Provider {
+class BaseStateModel<Provider>: StateModel, Injectable where Provider: Trio.Provider {
     @Injected() var router: Router!
     @Injected() var settingsManager: SettingsManager!
     var isInitial: Bool = true
@@ -45,7 +45,7 @@ class BaseStateModel<Provider>: StateModel, Injectable where Provider: FreeAPS.P
     }
 
     func subscribeSetting<T: Equatable, U: Publisher>(
-        _ keyPath: WritableKeyPath<FreeAPSSettings, T>,
+        _ keyPath: WritableKeyPath<TrioSettings, T>,
         on settingPublisher: U, initial: (T) -> Void, map: ((T) -> (T))? = nil, didSet: ((T) -> Void)? = nil
     ) where U.Output == T, U.Failure == Never {
         initial(settingsManager.settings[keyPath: keyPath])

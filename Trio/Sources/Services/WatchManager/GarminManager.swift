@@ -23,7 +23,7 @@ final class BaseGarminManager: NSObject, GarminManager, Injectable {
 
     private let connectIQ = ConnectIQ.sharedInstance()
 
-    private let router = FreeAPSApp.resolver.resolve(Router.self)!
+    private let router = TrioApp.resolver.resolve(Router.self)!
 
     @Injected() private var notificationCenter: NotificationCenter!
 

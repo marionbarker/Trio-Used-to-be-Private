@@ -359,7 +359,7 @@ extension BaseWatchManager:
         configureState()
     }
 
-    func settingsDidChange(_: FreeAPSSettings) {
+    func settingsDidChange(_: TrioSettings) {
         configureState()
     }
 

@@ -31,12 +31,12 @@ protocol pumpNotificationObserver {
 
 final class BaseUserNotificationsManager: NSObject, UserNotificationsManager, Injectable {
     private enum Identifier: String {
-        case glucocoseNotification = "FreeAPS.glucoseNotification"
-        case carbsRequiredNotification = "FreeAPS.carbsRequiredNotification"
-        case noLoopFirstNotification = "FreeAPS.noLoopFirstNotification"
-        case noLoopSecondNotification = "FreeAPS.noLoopSecondNotification"
-        case bolusFailedNotification = "FreeAPS.bolusFailedNotification"
-        case pumpNotification = "FreeAPS.pumpNotification"
+        case glucocoseNotification = "Trio.glucoseNotification"
+        case carbsRequiredNotification = "Trio.carbsRequiredNotification"
+        case noLoopFirstNotification = "Trio.noLoopFirstNotification"
+        case noLoopSecondNotification = "Trio.noLoopSecondNotification"
+        case bolusFailedNotification = "Trio.bolusFailedNotification"
+        case pumpNotification = "Trio.pumpNotification"
     }
 
     @Injected() private var settingsManager: SettingsManager!

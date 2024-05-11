@@ -16,7 +16,7 @@ import Swinject
     let coredataContext = CoreDataStack.shared.persistentContainer.viewContext
 
     override init() {
-        resolver = FreeAPSApp.resolver
+        resolver = TrioApp.resolver
         super.init()
         injectServices(resolver)
     }

@@ -244,7 +244,7 @@ extension DataTable.StateModel:
     CarbsObserver,
     GlucoseObserver
 {
-    func settingsDidChange(_: FreeAPSSettings) {
+    func settingsDidChange(_: TrioSettings) {
         setupTreatments()
     }
 

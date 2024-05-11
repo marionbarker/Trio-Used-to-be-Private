@@ -1,4 +1,4 @@
-@testable import FreeAPS
+@testable import Trio
 import XCTest
 
 class FileStorageTests: XCTestCase {

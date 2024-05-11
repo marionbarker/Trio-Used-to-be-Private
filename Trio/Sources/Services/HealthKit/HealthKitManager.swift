@@ -46,7 +46,7 @@ final class BaseHealthKitManager: HealthKitManager, Injectable, CarbsObserver, P
         static let healthInsulinObject = HKObjectType.quantityType(forIdentifier: .insulinDelivery)
 
         // Meta-data key of FreeASPX data in HealthStore
-        static let freeAPSMetaKey = "From Trio"
+        static let TrioMetaKey = "From Trio"
     }
 
     @Injected() private var glucoseStorage: GlucoseStorage!
@@ -96,10 +96,10 @@ final class BaseHealthKitManager: HealthKitManager, Injectable, CarbsObserver, P
             options: .strictStartDate
         )
 
-        // loading only not FreeAPS bg
+        // loading only not Trio bg
         // this predicate dont influence on Deleted Objects, only on added
         let predicateByMeta = HKQuery.predicateForObjects(
-            withMetadataKey: Config.freeAPSMetaKey,
+            withMetadataKey: Config.TrioMetaKey,
             operatorType: .notEqualTo,
             value: 1
         )
@@ -162,7 +162,7 @@ final class BaseHealthKitManager: HealthKitManager, Injectable, CarbsObserver, P
                             HKMetadataKeyExternalUUID: $0.id,
                             HKMetadataKeySyncIdentifier: $0.id,
                             HKMetadataKeySyncVersion: 1,
-                            Config.freeAPSMetaKey: true
+                            Config.TrioMetaKey: true
                         ]
                     )
                 }
@@ -214,7 +214,7 @@ final class BaseHealthKitManager: HealthKitManager, Injectable, CarbsObserver, P
                         metadata: [
                             HKMetadataKeySyncIdentifier: $0.id ?? "_id",
                             HKMetadataKeySyncVersion: 1,
-                            Config.freeAPSMetaKey: true
+                            Config.TrioMetaKey: true
                         ]
                     )
                 }
@@ -273,7 +273,7 @@ final class BaseHealthKitManager: HealthKitManager, Injectable, CarbsObserver, P
                             HKMetadataKeyExternalUUID: $0.id,
                             HKMetadataKeySyncIdentifier: $0.id,
                             HKMetadataKeySyncVersion: 1,
-                            Config.freeAPSMetaKey: true
+                            Config.TrioMetaKey: true
                         ]
                     )
                 }
@@ -290,7 +290,7 @@ final class BaseHealthKitManager: HealthKitManager, Injectable, CarbsObserver, P
                             HKMetadataKeyExternalUUID: $0.id,
                             HKMetadataKeySyncIdentifier: $0.id,
                             HKMetadataKeySyncVersion: 1,
-                            Config.freeAPSMetaKey: true
+                            Config.TrioMetaKey: true
                         ]
                     )
                 }
@@ -495,7 +495,7 @@ final class BaseHealthKitManager: HealthKitManager, Injectable, CarbsObserver, P
 
         newGlucose += samples
             .compactMap { sample -> HealthKitSample? in
-                let fromTrio = sample.metadata?[Config.freeAPSMetaKey] as? Bool ?? false
+                let fromTrio = sample.metadata?[Config.TrioMetaKey] as? Bool ?? false
                 guard !fromTrio else { return nil }
                 return HealthKitSample(
                     healthKitId: sample.uuid.uuidString,

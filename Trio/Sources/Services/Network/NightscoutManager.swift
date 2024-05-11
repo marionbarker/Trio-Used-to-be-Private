@@ -272,7 +272,7 @@ final class BaseNightscoutManager: NightscoutManager, Injectable {
         }
     }
 
-    func uploadSettings(_ settings: FreeAPSSettings) {
+    func uploadSettings(_ settings: TrioSettings) {
         let sets = NightscoutSettings(
             settings: settingsManager.settings
         )
@@ -405,7 +405,7 @@ final class BaseNightscoutManager: NightscoutManager, Injectable {
             debug(.nightscout, "NightscoutManager uploadProfile: error loading insulinSensitivities")
             return
         }
-        guard let settings = storage.retrieve(OpenAPS.FreeAPS.settings, as: FreeAPSSettings.self) else {
+        guard let settings = storage.retrieve(OpenAPS.Trio.settings, as: TrioSettings.self) else {
             debug(.nightscout, "NightscoutManager uploadProfile: error loading settings")
             return
         }
@@ -519,8 +519,8 @@ final class BaseNightscoutManager: NightscoutManager, Injectable {
             NSLog("NightscoutManager Preferences, preferences unchanged")
         } else { uploadPreferences(preferences) }
 
-        // UPLOAD FreeAPS Settings WHEN CHANGED
-        if let uploadedSettings = storage.retrieve(OpenAPS.Nightscout.uploadedSettings, as: FreeAPSSettings.self),
+        // UPLOAD Trio Settings WHEN CHANGED
+        if let uploadedSettings = storage.retrieve(OpenAPS.Nightscout.uploadedSettings, as: TrioSettings.self),
            uploadedSettings.rawJSON.sorted() == settings.rawJSON.sorted(), !force
         {
             NSLog("NightscoutManager Settings, settings unchanged")

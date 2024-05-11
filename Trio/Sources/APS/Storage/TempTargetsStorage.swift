@@ -42,7 +42,7 @@ final class BaseTempTargetsStorage: TempTargetsStorage, Injectable {
                 }
             }
 
-            let file = isPresets ? OpenAPS.FreeAPS.tempTargetsPresets : OpenAPS.Settings.tempTargets
+            let file = isPresets ? OpenAPS.Trio.tempTargetsPresets : OpenAPS.Settings.tempTargets
             var uniqEvents: [TempTarget] = []
             self.storage.transaction { storage in
                 storage.append(targets, to: file, uniqBy: \.createdAt)
@@ -108,12 +108,12 @@ final class BaseTempTargetsStorage: TempTargetsStorage, Injectable {
     }
 
     func storePresets(_ targets: [TempTarget]) {
-        storage.remove(OpenAPS.FreeAPS.tempTargetsPresets)
+        storage.remove(OpenAPS.Trio.tempTargetsPresets)
 
         storeTempTargets(targets, isPresets: true)
     }
 
     func presets() -> [TempTarget] {
-        storage.retrieve(OpenAPS.FreeAPS.tempTargetsPresets, as: [TempTarget].self)?.reversed() ?? []
+        storage.retrieve(OpenAPS.Trio.tempTargetsPresets, as: [TempTarget].self)?.reversed() ?? []
     }
 }

@@ -69,7 +69,7 @@ final class BaseDeviceDataManager: DeviceDataManager, Injectable {
     let pumpNewStatus = PassthroughSubject<Void, Never>()
     let manualTempBasal = PassthroughSubject<Bool, Never>()
 
-    private let router = FreeAPSApp.resolver.resolve(Router.self)!
+    private let router = TrioApp.resolver.resolve(Router.self)!
     @SyncAccess private var pumpUpdateCancellable: AnyCancellable?
     private var pumpUpdatePromise: Future<Bool, Never>.Promise?
     @SyncAccess var loopInProgress: Bool = false
