@@ -239,9 +239,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "388E595725AD948C0019842D"
-               BuildableName = "FreeAPS.app"
-               BlueprintName = "FreeAPS"
-               ReferencedContainer = "container:FreeAPS.xcodeproj">
+               BuildableName = "Trio.app"
+               BlueprintName = "Trio"
+               ReferencedContainer = "container:Trio.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -257,9 +257,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "38FCF3EC25E9028E0078B0D1"
-               BuildableName = "FreeAPSTests.xctest"
-               BlueprintName = "FreeAPSTests"
-               ReferencedContainer = "container:FreeAPS.xcodeproj">
+               BuildableName = "TrioTests.xctest"
+               BlueprintName = "TrioTests"
+               ReferencedContainer = "container:Trio.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -359,9 +359,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "388E595725AD948C0019842D"
-            BuildableName = "FreeAPS.app"
-            BlueprintName = "FreeAPS"
-            ReferencedContainer = "container:FreeAPS.xcodeproj">
+            BuildableName = "Trio.app"
+            BlueprintName = "Trio"
+            ReferencedContainer = "container:Trio.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -383,9 +383,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "388E595725AD948C0019842D"
-            BuildableName = "FreeAPS.app"
-            BlueprintName = "FreeAPS"
-            ReferencedContainer = "container:FreeAPS.xcodeproj">
+            BuildableName = "Trio.app"
+            BlueprintName = "Trio"
+            ReferencedContainer = "container:Trio.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
